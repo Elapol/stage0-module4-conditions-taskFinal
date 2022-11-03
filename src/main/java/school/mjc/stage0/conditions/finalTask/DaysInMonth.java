@@ -7,11 +7,6 @@ public class DaysInMonth {
 
     public static void printDays(int year, int month) {
         boolean ifLeapYear = year / 400 != 0 && year % 400 == 0 || year / 4 != 0 && year % 4 == 0;
-        if (ifLeapYear) {
-            System.out.println("leap");
-        } else {
-            System.out.println("not leap");
-        }
         switch (month) {
             case (1):
             case (3):
