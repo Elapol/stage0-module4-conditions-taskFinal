@@ -2,11 +2,12 @@ package school.mjc.stage0.conditions.finalTask;
 
 public class DaysInMonth {
     public static void main(String[] args) {
-        printDays(2011, 11);
+        printDays(2016, 2);
     }
 
     public static void printDays(int year, int month) {
-        if (year / 400 != 0 && year % 400 == 0 || year / 4 != 0 && year % 4 == 0) {
+        boolean ifLeapYear = year / 400 != 0 && year % 400 == 0 || year / 4 != 0 && year % 4 == 0;
+        if (ifLeapYear) {
             System.out.println("leap");
         } else {
             System.out.println("not leap");
@@ -28,10 +29,14 @@ public class DaysInMonth {
                 System.out.println(30);
                 break;
             case (2):
-                System.out.println(28);
+                if (ifLeapYear) {
+                    System.out.println(29);
+                } else {
+                    System.out.println(28);
+                }
                 break;
             default:
-                System.out.println("wrong number!");
+                System.out.println("invalid date");
                 break;
 
         }
